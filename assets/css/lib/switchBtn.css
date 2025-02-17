@@ -1,0 +1,36 @@
+.switchBtn {
+  border: 0.1rem solid var(--c-primary);
+  border-radius: 99rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.4rem;
+  margin: 0 auto;
+  padding: 0.4rem;
+  width: fit-content;
+
+  button {
+    border-radius: 99rem;
+    color: var(--c-primary);
+    display: block;
+    padding: 0.8rem 2.4rem;
+    width: fit-content;
+
+    &.is-current {
+      background-color: var(--c-primary);
+      color: #fff;
+    }
+  }
+}
+
+.switchContentWrap {
+  width: 100%;
+
+  .switchContent {
+    display: none;
+    width: 100%;
+
+    &.is-active {
+      display: block;
+    }
+  }
+}

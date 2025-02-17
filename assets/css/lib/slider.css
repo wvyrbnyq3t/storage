@@ -1,0 +1,109 @@
+#slider {
+  height: 100dvh;
+  width: min(100dvw, var(--w-pc));
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  visibility: hidden;
+  z-index: 100;
+
+  .sliderContent {
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    min-height: 100dvh;
+    overflow: hidden auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(100%, 0);
+    transition: all 0.4s ease;
+    visibility: hidden;
+    z-index: 101;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    &.is-active {
+      transform: none !important;
+      visibility: visible;
+    }
+
+    .sliderContentHeader {
+      background-color: transparent;
+      padding: 1.6rem;
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: min(100%, var(--w-pc));
+      z-index: 110;
+
+      .btn-closeSlider {
+        display: block;
+        height: 2.4rem;
+        width: 2.4rem;
+        position: relative;
+
+        &::before {
+          color: var(--c-primary);
+          content: "\e5e0";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+
+          font-family: "Material Symbols Outlined";
+          font-weight: normal;
+          font-style: normal;
+          font-size: 2.4rem; /* Preferred icon size */
+          display: inline-block;
+          line-height: 1;
+          text-transform: none;
+          letter-spacing: normal;
+          word-wrap: normal;
+          white-space: nowrap;
+          direction: ltr;
+        }
+      }
+    }
+    .sliderContentBody {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      z-index: 101;
+    }
+  }
+  .sliderContent-bottom {
+    transform: translate(0, 100%);
+
+    .sliderContentHeader {
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      left: 0;
+      transform: translate(0, 0) !important;
+      width: 100%;
+
+      .btn-closeSlider {
+        &::before {
+          content: "\e5cd";
+        }
+      }
+      .sliderContentTitle {
+        font-size: 1.6rem;
+        font-weight: 700;
+        overflow: hidden;
+        padding-left: 1.6rem;
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+      }
+    }
+  }
+}

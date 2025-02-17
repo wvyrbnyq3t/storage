@@ -1,0 +1,67 @@
+.spinnerBtnWrap {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(3, 4rem);
+  margin-left: auto;
+  width: fit-content;
+
+  .spinnerBtn {
+    border: 0.2rem solid var(--c-primary);
+    border-radius: 99rem;
+    color: var(--c-primary);
+    display: block;
+    height: 4rem;
+    width: 4rem;
+    position: relative;
+
+    &::before {
+      color: inherit;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      
+      font-family: "Material Symbols Outlined";
+      font-weight: normal;
+      font-style: normal;
+      font-size: 3.2rem; /* Preferred icon size */
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+    &[aria-disabled="true"] {
+      border-color: var(--c-gray);
+      color: var(--c-gray);
+      cursor: not-allowed;
+    }
+    
+    &.spinnerBtn-minus {
+      &::before {
+        content: "\e15b";
+      }
+    }
+    &.spinnerBtn-plus {
+      
+      &::before {
+        content: "\e145";
+      }
+    }
+  }
+  input[type="number"] {
+    appearance: none;
+    border: none;
+    font-size: 2.4rem;
+    font-weight: 700;
+    outline: none;
+    text-align: center;
+
+    &::-webkit-inner-spin-button {
+      appearance: none;
+      display: block;
+    }
+  }
+}
