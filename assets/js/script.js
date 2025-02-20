@@ -1,7 +1,5 @@
 const btn = document.getElementById("executeStorage");
 
-localStorage.clear();
-
 btn.addEventListener("click", () => {
   // sessionStorage
   sessionStorage.setItem("name", "John Doe");
