@@ -48,12 +48,12 @@ body {
   main {
     .contentBody {
       display: grid;
-      gap: 1.6rem;
+      gap: 2.4rem;
       padding: 1.6rem;
 
       section {
         display: grid;
-        gap: 1.2rem;
+        gap: 1.6rem;
 
         .secTitle {
           font-size: 2rem;
